@@ -5,6 +5,7 @@ import Workflow from "./components/Workflow";
 import Footer from "./components/Footer";
 import Pricing from "./components/Pricing";
 import Testimonials from "./components/Testimonials";
+import Aboutus from "./components/Aboutus";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Navbar />
       <div className="max-w-7xl mx-auto pt-20 px-6">
         <HeroSection />
+        <Aboutus />
         <FeatureSection />
         <Workflow />
         <Pricing />
