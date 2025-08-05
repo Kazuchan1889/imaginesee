@@ -104,7 +104,7 @@ const FeatureSection = () => {
               {/* Back */}
               <div className="absolute w-full h-full flex flex-col border border-[#34699A] rounded-xl shadow-md text-white [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-hidden">
                 {/* Animated background images */}
-                <div className="relative h-[100px] w-full overflow-hidden">
+                <div className="relative h-[250px] w-full overflow-hidden">
                   <img
                     src={card.backImages[0]}
                     alt="Back1"
