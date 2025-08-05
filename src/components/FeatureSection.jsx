@@ -3,63 +3,54 @@ import testImage from "../assets/test.jpg";
 import testImage2 from "../assets/testimage2.jpeg";
 import testImage3 from "../assets/testimage3.jpg";
 
-// 8 data dengan image depan dan belakang dirotasi dari 3 image yang tersedia
 const cardData = [
   {
-    frontTitle: "Web Development",
-    backTitle: "Build Modern Websites",
-    backDesc: "We create responsive, fast, and SEO-friendly websites for your business.",
+    frontTitle: "Branding & Graphic Design",
+    backTitle: "Visual Identity",
+    backDesc:
+      "We craft stunning brand identities and eye-catching designs to represent your business professionally.",
     frontImage: testImage,
     backImages: [testImage2, testImage3],
   },
   {
-    frontTitle: "Mobile Apps",
-    backTitle: "iOS & Android",
-    backDesc: "Custom mobile applications tailored to meet your goals on all platforms.",
+    frontTitle: "Event Documentation",
+    backTitle: "Capture Every Moment",
+    backDesc:
+      "From photography to video editing, we professionally document your events and tell your story visually.",
     frontImage: testImage2,
     backImages: [testImage3, testImage],
   },
   {
-    frontTitle: "UI/UX Design",
-    backTitle: "Design That Works",
-    backDesc: "Beautiful and intuitive design that improves user engagement and retention.",
+    frontTitle: "Social Media Management",
+    backTitle: "Build Online Presence",
+    backDesc:
+      "We help you plan, create, and manage content to grow your audience and engagement effectively.",
     frontImage: testImage3,
     backImages: [testImage, testImage2],
   },
   {
-    frontTitle: "SEO Optimization",
-    backTitle: "Be Found Online",
-    backDesc: "Increase your visibility and reach the right audience with strategic SEO.",
+    frontTitle: "Company Profile",
+    backTitle: "Professional Storytelling",
+    backDesc:
+      "Showcase your company’s values, achievements, and services through compelling visuals and content.",
     frontImage: testImage,
     backImages: [testImage2, testImage3],
   },
   {
-    frontTitle: "Cloud Solutions",
-    backTitle: "Scale with Cloud",
-    backDesc: "Leverage cloud infrastructure for scalability, security, and reliability.",
+    frontTitle: "360° Marketing",
+    backTitle: "All-Around Strategy",
+    backDesc:
+      "Integrated marketing services to amplify your brand across all platforms and maximize results.",
     frontImage: testImage2,
     backImages: [testImage3, testImage],
   },
   {
-    frontTitle: "E-Commerce",
-    backTitle: "Sell Online",
-    backDesc: "Launch your online store with features like inventory, payments, and shipping.",
+    frontTitle: "Website Development",
+    backTitle: "Digital Experience",
+    backDesc:
+      "We design and build modern, responsive, and user-focused websites tailored to your business goals.",
     frontImage: testImage3,
     backImages: [testImage, testImage2],
-  },
-  {
-    frontTitle: "Maintenance",
-    backTitle: "We Keep You Running",
-    backDesc: "Ongoing updates, backups, and monitoring to keep your systems stable.",
-    frontImage: testImage,
-    backImages: [testImage2, testImage3],
-  },
-  {
-    frontTitle: "Consulting",
-    backTitle: "Tech Strategy",
-    backDesc: "Guidance on digital strategy, tools, and best practices for your growth.",
-    frontImage: testImage2,
-    backImages: [testImage3, testImage],
   },
 ];
 
@@ -87,7 +78,7 @@ const FeatureSection = () => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 px-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 px-6">
         {cardData.map((card, index) => (
           <div
             key={index}
