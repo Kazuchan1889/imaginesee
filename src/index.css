@@ -9,6 +9,10 @@
   color-scheme: dark;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 .card2:hover {
   transform: scale(0.97);
   border-radius: 20px;
