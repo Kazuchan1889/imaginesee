@@ -1,29 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import project1 from "../assets/test.jpg";
-import project2 from "../assets/testimage2.jpeg";
+import project2 from "../assets/Puriland Balaraja-social.png";
 import project3 from "../assets/testimage3.jpg";
 import project4 from "../assets/code.jpg";
+import project5 from "../assets/testimage4.jpg";
 
 const projects = [
   { id: 1, image: project1, category: "website" },
   { id: 2, image: project2, category: "social" },
   { id: 3, image: project3, category: "video" },
   { id: 4, image: project4, category: "event" },
+  { id: 5, image: project5, category: "website" },
 ];
 
 const Portfolio = () => {
   const [filter, setFilter] = useState("all");
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const filteredProjects =
     filter === "all"
       ? projects
       : projects.filter((project) => project.category === filter);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) =>
+        prev === filteredProjects.length - 1 ? 0 : prev + 1
+      );
+    }, 3000); // 3 detik per slide
+
+    return () => clearInterval(interval);
+  }, [filteredProjects]);
+
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [filter]);
+
   return (
     <div className="mt-20">
       <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center mt-6 tracking-wide">
         Our{" "}
-        <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
+        <span className="bg-gradient-to-r from-[#58A0C8] to-[#34699A] text-transparent bg-clip-text">
           Project
         </span>
       </h2>
@@ -31,7 +49,9 @@ const Portfolio = () => {
         <div class="flex items-center gap-2 mt-10">
           <button
             onClick={() => setFilter("website")}
-            class="cursor-pointer bg-black relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#06B6D4] h-9 rounded-md px-3"
+            className={`cursor-pointer bg-black relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#06B6D4] h-9 rounded-md px-3
+    ${filter === "website" ? "bg-[#F5F5F5] text-[#06B6D4]" : ""}
+  `}
           >
             <svg
               class="lucide lucide-rocket text-cyan-500 dark:text-cyan-400"
@@ -54,7 +74,9 @@ const Portfolio = () => {
           </button>
           <button
             onClick={() => setFilter("social")}
-            class="cursor-pointer bg-black relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#60A5FA] h-9 rounded-md px-3"
+            className={`cursor-pointer bg-black relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#60A5FA] h-9 rounded-md px-3 ${
+              filter === "social" ? "bg-[#F5F5F5] text-[#60A5FA]" : ""
+            }`}
           >
             <svg
               class="lucide lucide-newspaper text-blue-400 dark:text-blue-600"
@@ -77,7 +99,9 @@ const Portfolio = () => {
           </button>
           <button
             onClick={() => setFilter("video")}
-            class="cursor-pointer bg-black relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#FACC14] h-9 rounded-md px-3"
+            class={`cursor-pointer bg-black relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#FACC14] h-9 rounded-md px-3 ${
+              filter === "video" ? "bg-[#F5F5F5] text-[#FACC14]" : ""
+            }`}
           >
             <svg
               class="lucide lucide-sticky-note text-yellow-400 dark:text-yellow-600"
@@ -98,7 +122,9 @@ const Portfolio = () => {
           </button>
           <button
             onClick={() => setFilter("event")}
-            class="cursor-pointer bg-black relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#FB923C] h-9 rounded-md px-3"
+            class={`cursor-pointer bg-black relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#FB923C] h-9 rounded-md px-3 ${
+              filter === "event" ? "bg-[#F5F5F5] text-[#FB923C]" : ""
+            }`}
           >
             <svg
               class="lucide lucide-star text-orange-400 dark:text-orange-600"
@@ -118,33 +144,38 @@ const Portfolio = () => {
           </button>
         </div>
         {/* PROJECT CARDS */}
-        <div className="mt-10 px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          {filteredProjects.map((project) => (
-            <div
-              key={project.id}
+        <div className="mt-10 px-10 flex justify-center items-center min-h-[250px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={filteredProjects[currentIndex]?.id}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
               className="card"
               style={{
                 backgroundImage:
-                  "linear-gradient(163deg, #00ff75 0%, #3700ff 100%)",
+                  "linear-gradient(163deg, #0F253E 0%, #F2BE5C 100%)",
                 borderRadius: "20px",
-                height: "200px",
+                width: "900px",
+                height: "600px",
                 display: "inline-block",
                 transition: "all 0.3s",
               }}
             >
               <img
-                src={project.image}
-                alt={`project-${project.id}`}
+                src={filteredProjects[currentIndex]?.image}
+                alt={`project-${filteredProjects[currentIndex]?.id}`}
                 className="card2"
                 style={{
-                  height: "200px",
+                  height: "600px",
                   width: "100%",
                   borderRadius: "10px",
                   display: "block",
                 }}
               />
-            </div>
-          ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </div>
