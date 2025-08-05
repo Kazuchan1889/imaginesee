@@ -47,8 +47,8 @@ const Pricing = () => {
             className="relative w-[240px] h-[320px] mx-auto group"
           >
             {/* Glow Background */}
-            <div className="absolute top-1/2 left-1/2 w-[270px] h-[340px] rounded-[12px] bg-gradient-to-br from-[#e81cff] to-[#40c9ff] transition-all duration-[600ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] z-[-10] -translate-x-1/2 -translate-y-1/2 group-hover:rotate-[-90deg] group-hover:scale-x-[1.34] group-hover:scale-y-[0.77]" />
-            <div className="absolute top-1/2 left-1/2 w-[270px] h-[340px] z-[-1] bg-gradient-to-br from-[#fc00ff] to-[#00dbde] scale-[0.95] blur-[20px] transition-all duration-500 -translate-x-1/2 -translate-y-1/2 group-hover:blur-[30px]" />
+            <div className="absolute top-1/2 left-1/2 w-[251px] h-[330px] rounded-[12px] bg-gradient-to-br from-[#0F253E] to-[#F2BE5C] transition-all duration-[600ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] z-[-10] -translate-x-1/2 -translate-y-1/2 group-hover:rotate-[-90deg] group-hover:scale-x-[1.34] group-hover:scale-y-[0.77]" />
+            <div className="absolute top-1/2 left-1/2 w-[251px] h-[335px] z-[-1] bg-gradient-to-br from-[#0F253E] to-[#F2BE5C] scale-[0.95] blur-[20px] transition-all duration-500 -translate-x-1/2 -translate-y-1/2 group-hover:blur-[30px]" />
 
             {/* Main Card */}
             <div
@@ -67,7 +67,7 @@ const Pricing = () => {
 
               {/* Back Content */}
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="bg-black bg-opacity-90 p-4 rounded-xl text-white w-[90%] h-[85%] flex flex-col justify-center">
+                <div className="bg-black bg-opacity-90 p-4 rounded-xl text-white w-[100%] h-[100%] flex flex-col justify-center">
                   <p className="text-lg font-bold mb-2">{card.backTitle}</p>
                   <p className="text-sm text-left">{card.backDesc}</p>
                 </div>

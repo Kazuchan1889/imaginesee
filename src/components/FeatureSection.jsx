@@ -104,7 +104,7 @@ const FeatureSection = () => {
         </span>
         <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-10 lg:mt-20 tracking-wide">
           We help you{" "}
-          <span className="bg-gradient-to-r from-[#58A0C8] to-[#34699A] text-transparent bg-clip-text">
+          <span className="bg-gradient-to-br from-[#0F253E] to-[#F2BE5C] text-transparent bg-clip-text">
             grow digitally
           </span>
         </h2>
