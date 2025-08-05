@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Pricing from "./components/Pricing";
 import Testimonials from "./components/Testimonials";
 import Aboutus from "./components/Aboutus";
+import Count from "./components/count";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <div className="max-w-7xl mx-auto pt-20 px-6">
         <HeroSection />
         <Aboutus />
+         <Count />
         <FeatureSection />
         <Workflow />
         <Pricing />
