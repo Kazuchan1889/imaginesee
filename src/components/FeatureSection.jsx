@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import testImage from "../assets/test.jpg";
 import testImage2 from "../assets/testimage2.jpeg";
 import testImage3 from "../assets/testimage3.jpg";
@@ -56,6 +56,8 @@ const cardData = [
 
 const FeatureSection = () => {
   const [showFirstImage, setShowFirstImage] = useState(true);
+  const titleRef = useRef();
+  const cardsRef = useRef();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -64,9 +66,39 @@ const FeatureSection = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+    };
+
+    const animateOnScroll = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fade-in-up");
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const animateTitle = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fade-in-right");
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const titleObserver = new IntersectionObserver(animateTitle, observerOptions);
+    const cardObserver = new IntersectionObserver(animateOnScroll, observerOptions);
+
+    if (titleRef.current) titleObserver.observe(titleRef.current);
+    if (cardsRef.current) cardObserver.observe(cardsRef.current);
+  }, []);
+
   return (
     <div className="relative mt-20 border-b border-neutral-800 min-h-[800px]">
-      <div className="text-center">
+      <div className="text-center opacity-0" ref={titleRef}>
         <span className="bg-neutral-900 text-orange-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
           Our Services
         </span>
@@ -78,7 +110,10 @@ const FeatureSection = () => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 px-6">
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 px-6 opacity-0"
+        ref={cardsRef}
+      >
         {cardData.map((card, index) => (
           <div
             key={index}
@@ -103,25 +138,20 @@ const FeatureSection = () => {
 
               {/* Back */}
               <div className="absolute w-full h-full flex flex-col border border-[#34699A] rounded-xl shadow-md text-white [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-hidden">
-                {/* Animated background images */}
                 <div className="relative h-[250px] w-full overflow-hidden">
                   <img
                     src={card.backImages[0]}
                     alt="Back1"
-                    className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                      showFirstImage ? "opacity-100" : "opacity-0"
-                    }`}
+                    className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${showFirstImage ? "opacity-100" : "opacity-0"
+                      }`}
                   />
                   <img
                     src={card.backImages[1]}
                     alt="Back2"
-                    className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                      showFirstImage ? "opacity-0" : "opacity-100"
-                    }`}
+                    className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${showFirstImage ? "opacity-0" : "opacity-100"
+                      }`}
                   />
                 </div>
-
-                {/* Text content */}
                 <div className="flex flex-col justify-center h-full px-4 text-left bg-gradient-to-br from-[#58A0C8] to-[#34699A]">
                   <p className="text-[1.1rem] font-bold mb-1">{card.backTitle}</p>
                   <p className="text-sm">{card.backDesc}</p>
