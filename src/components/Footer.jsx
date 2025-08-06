@@ -1,29 +1,31 @@
 import React from "react";
 import logo from "../assets/logo nav.png";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 const icons = [
   {
     name: "Facebook",
     icon: <FaFacebookF />,
-    hoverBg: "group-hover:bg-[#1da1f2]",
+    url: "https://www.facebook.com/profile.php?id=61577996219956",
+    hoverBg: "hover:bg-[#1DA1F2]",
     tooltipBg: "bg-[#1da1f2]",
     textColor: "group-hover:text-white",
   },
   {
-    name: "Twitter",
-    icon: <FaTwitter />,
-    hoverBg: "group-hover:bg-[#1da1f2]",
+    name: "LinkedIn",
+    icon: <FaLinkedinIn />, // Ganti jika ingin pakai icon LinkedIn yang tepat
+    url: "https://www.linkedin.com/company/imaginesee-digital-agency/",
+    hoverBg: "hover:bg-[#1DA1F2]",
     tooltipBg: "bg-[#1da1f2]",
     textColor: "group-hover:text-white",
   },
   {
     name: "Instagram",
     icon: <FaInstagram />,
+    url: "https://www.instagram.com/imaginesee.id/",
     hoverBg:
-      "group-hover:bg-gradient-to-r group-hover:from-[#f9ce34] group-hover:via-[#ee2a7b] group-hover:to-[#6228d7]",
-    tooltipBg:
-      "bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]",
+      "hover:bg-gradient-to-r hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7]",
+    tooltipBg: "bg-gradient-to-r from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]",
     textColor: "group-hover:text-white",
   },
 ];
@@ -45,25 +47,29 @@ const Footer = () => {
         {/* Right Social Icons */}
         <div className="sm:absolute sm:right-0 sm:top-1/2 sm:-translate-y-1/2">
           <ul className="flex justify-center gap-2">
-            {icons.map(({ name, icon, hoverBg, tooltipBg, textColor }, index) => (
-              <li
-                key={index}
-                className={`group relative w-[40px] h-[40px] bg-white rounded-full shadow-md flex items-center justify-center cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] ${hoverBg}`}
-              >
-                {/* Tooltip */}
-                <span
-                  className={`absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mb-2 px-2 py-1 text-xs text-white rounded-md opacity-0 pointer-events-none transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] group-hover:opacity-100 group-hover:-top-5 ${tooltipBg}`}
+            {icons.map(({ name, icon, url, hoverBg, tooltipBg, textColor }, index) => (
+              <li key={index}>
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group relative w-[40px] h-[40px] bg-white rounded-full shadow-md flex items-center justify-center cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] ${hoverBg}`}
                 >
-                  {name}
+                  {/* Tooltip */}
                   <span
-                    className={`absolute left-1/2 transform -translate-x-1/2 rotate-45 w-2 h-2 -bottom-1 ${tooltipBg}`}
-                  />
-                </span>
+                    className={`absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mb-2 px-2 py-1 text-xs text-white rounded-md opacity-0 pointer-events-none transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] group-hover:opacity-100 group-hover:-top-5 ${tooltipBg}`}
+                  >
+                    {name}
+                    <span
+                      className={`absolute left-1/2 transform -translate-x-1/2 rotate-45 w-2 h-2 -bottom-1 ${tooltipBg}`}
+                    />
+                  </span>
 
-                {/* Icon */}
-                <span className={`text-black text-[16px] transition duration-300 ${textColor}`}>
-                  {icon}
-                </span>
+                  {/* Icon */}
+                  <span className={`text-black text-[16px] transition duration-300 ${textColor}`}>
+                    {icon}
+                  </span>
+                </a>
               </li>
             ))}
           </ul>
