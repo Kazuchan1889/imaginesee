@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import project1 from "../assets/test.jpg";
+import project1 from "../assets/hbm.png";
 import project2 from "../assets/social1.png";
-import project5 from "../assets/testimage4.jpg";
+import project5 from "../assets/arqa.png";
 import project6 from "../assets/social2.png";
 import project7 from "../assets/social3.png";
+import project8 from "../assets/kingsvault.png";
+import project9 from "../assets/vikings.png";
+import project10 from "../assets/bahasa+.png";
+import project11 from "../assets/social4.png"
 
 const projects = [
-  { id: 1, image: project1, category: "website" },
+  { id: 1, image: project1, category: "website", link: "https://hbm.co.id/" },
   { id: 2, image: project2, category: "social" },
   {
     id: 3,
@@ -20,7 +24,12 @@ const projects = [
       "https://drive.google.com/file/d/1Vtefr46sk9KBecaP8NS2ZwO-X0fkfU7k/preview",
     category: "event",
   },
-  { id: 5, image: project5, category: "website" },
+  {
+    id: 5,
+    image: project5,
+    category: "website",
+    link: "https://arqa.hbm.co.id/",
+  },
   { id: 6, image: project6, category: "social" },
   { id: 7, image: project7, category: "social" },
   {
@@ -33,6 +42,29 @@ const projects = [
     video:
       "https://drive.google.com/file/d/1YvUnzCYhZJPK5fD9Epaopyd61SicqcoN/preview",
     category: "event",
+  },
+  {
+    id: 10,
+    image: project8,
+    category: "website",
+    link: "https://kingsvault.io/",
+  },
+  {
+    id: 11,
+    image: project9,
+    category: "website",
+    link: "http://31.97.66.224:81/",
+  },
+  {
+    id: 12,
+    image: project10,
+    category: "website",
+    link: "https://bahasaplus.com/",
+  },
+  {
+    id: 13,
+    image: project11,
+    category: "social",
   },
 ];
 
@@ -211,7 +243,7 @@ const Portfolio = () => {
                   width="100%"
                   height="600"
                   src={filteredProjects[currentIndex].video}
-                  title="YouTube video player"
+                  title="Video"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -221,17 +253,40 @@ const Portfolio = () => {
                   }}
                 ></iframe>
               ) : (
-                <img
-                  src={filteredProjects[currentIndex]?.image}
-                  alt={`project-${filteredProjects[currentIndex]?.id}`}
-                  className="card2"
-                  style={{
-                    height: "600px",
-                    width: "100%",
-                    borderRadius: "10px",
-                    display: "block",
-                  }}
-                />
+                <>
+                  {filteredProjects[currentIndex]?.category === "website" &&
+                  filteredProjects[currentIndex]?.link ? (
+                    <a
+                      href={filteredProjects[currentIndex].link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={filteredProjects[currentIndex]?.image}
+                        alt={`project-${filteredProjects[currentIndex]?.id}`}
+                        className="card2 cursor-pointer"
+                        style={{
+                          height: "600px",
+                          width: "100%",
+                          borderRadius: "10px",
+                          display: "block",
+                        }}
+                      />
+                    </a>
+                  ) : (
+                    <img
+                      src={filteredProjects[currentIndex]?.image}
+                      alt={`project-${filteredProjects[currentIndex]?.id}`}
+                      className="card2"
+                      style={{
+                        height: "600px",
+                        width: "100%",
+                        borderRadius: "10px",
+                        display: "block",
+                      }}
+                    />
+                  )}
+                </>
               )}
             </motion.div>
           </AnimatePresence>
