@@ -1,6 +1,6 @@
 const HeroSection = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center mt-6 lg:mt-20">
+    <div className="flex min-h-[70vh] flex-col items-center mt-6 lg:mt-20">
       <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide">
         Welcome to
         <span className="bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text">

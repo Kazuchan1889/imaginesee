@@ -1,17 +1,17 @@
-import logo from "../assets/logo basic2.png";
+import logo from "../assets/logo putih.png";
 
 const Aboutus = () => {
   return (
-    <div className="relative mt-20 border-b border-neutral-800 min-h-[300px]">
+    <div className="relative mt-20 border-b border-neutral-800 min-h-[500px] px-16">
       <div className="text-center">
         <span className="bg-neutral-900 text-orange-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
           About Us
         </span>
       </div>
       <div className="flex lg:flex-row flex-col items-center ">
-        <img src={logo} alt="logo" />
+        <img src={logo} alt="logo" className="w-[35%]" />
         <div className="flex flex-col items-center mt-6 ">
-          <h1 className="text-xl sm:text-2xl lg:text-2xl tracking-wide">
+          <h1 className="text-xl sm:text-2xl lg:text-2xl">
             Looking for an all-in-one marketing team?{" "}
             <span className="bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text">
               We're Here For You!

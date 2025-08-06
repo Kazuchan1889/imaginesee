@@ -1,21 +1,43 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import project1 from "../assets/test.jpg";
-import project2 from "../assets/Puriland Balaraja-social.png";
-import project3 from "../assets/testimage3.jpg";
-import project4 from "../assets/code.jpg";
+import project2 from "../assets/social1.png";
 import project5 from "../assets/testimage4.jpg";
+import project6 from "../assets/social2.png";
+import project7 from "../assets/social3.png";
 
 const projects = [
   { id: 1, image: project1, category: "website" },
   { id: 2, image: project2, category: "social" },
-  { id: 3, image: project3, category: "video" },
-  { id: 4, image: project4, category: "event" },
+  {
+    id: 3,
+    video: "https://www.youtube.com/embed/KEuNE2c66qg?si=rFdVLR0LXWCjPweZ",
+    category: "video",
+  },
+  {
+    id: 4,
+    video:
+      "https://drive.google.com/file/d/1Vtefr46sk9KBecaP8NS2ZwO-X0fkfU7k/preview",
+    category: "event",
+  },
   { id: 5, image: project5, category: "website" },
+  { id: 6, image: project6, category: "social" },
+  { id: 7, image: project7, category: "social" },
+  {
+    id: 8,
+    video: "https://www.youtube.com/embed/3ujlV7nmw6c?si=Ptcpk43qGYFg88Wc",
+    category: "video",
+  },
+  {
+    id: 9,
+    video:
+      "https://drive.google.com/file/d/1YvUnzCYhZJPK5fD9Epaopyd61SicqcoN/preview",
+    category: "event",
+  },
 ];
 
 const Portfolio = () => {
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState("website");
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const filteredProjects =
@@ -24,18 +46,29 @@ const Portfolio = () => {
       : projects.filter((project) => project.category === filter);
 
   useEffect(() => {
+    const isCurrentVideo = filteredProjects[currentIndex]?.video;
+    if (isCurrentVideo) return; // Stop auto slide if current is video
+
     const interval = setInterval(() => {
       setCurrentIndex((prev) =>
         prev === filteredProjects.length - 1 ? 0 : prev + 1
       );
-    }, 3000); // 3 detik per slide
+    }, 6000);
 
     return () => clearInterval(interval);
-  }, [filteredProjects]);
+  }, [filteredProjects, currentIndex]);
 
-  useEffect(() => {
-    setCurrentIndex(0);
-  }, [filter]);
+  const prevSlide = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? filteredProjects.length - 1 : prev - 1
+    );
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) =>
+      prev === filteredProjects.length - 1 ? 0 : prev + 1
+    );
+  };
 
   return (
     <div className="mt-20">
@@ -49,8 +82,12 @@ const Portfolio = () => {
         <div class="flex items-center gap-2 mt-10">
           <button
             onClick={() => setFilter("website")}
-            className={`cursor-pointer bg-black relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#06B6D4] h-9 rounded-md px-3
-    ${filter === "website" ? "bg-[#F5F5F5] text-[#06B6D4]" : ""}
+            className={`cursor-pointer relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3
+    ${
+      filter === "website"
+        ? "bg-[#F5F5F5] text-[#06B6D4]"
+        : "bg-black hover:bg-[#F5F5F5] hover:text-[#06B6D4]"
+    }
   `}
           >
             <svg
@@ -74,8 +111,10 @@ const Portfolio = () => {
           </button>
           <button
             onClick={() => setFilter("social")}
-            className={`cursor-pointer bg-black relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#60A5FA] h-9 rounded-md px-3 ${
-              filter === "social" ? "bg-[#F5F5F5] text-[#60A5FA]" : ""
+            className={`cursor-pointer relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3 ${
+              filter === "social"
+                ? "bg-[#F5F5F5] text-[#60A5FA]"
+                : "bg-black hover:bg-[#F5F5F5] hover:text-[#60A5FA]"
             }`}
           >
             <svg
@@ -99,8 +138,10 @@ const Portfolio = () => {
           </button>
           <button
             onClick={() => setFilter("video")}
-            class={`cursor-pointer bg-black relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#FACC14] h-9 rounded-md px-3 ${
-              filter === "video" ? "bg-[#F5F5F5] text-[#FACC14]" : ""
+            class={`cursor-pointer relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3 ${
+              filter === "video"
+                ? "bg-[#F5F5F5] text-[#FACC14]"
+                : "bg-black hover:bg-[#F5F5F5] hover:text-[#FACC14]"
             }`}
           >
             <svg
@@ -122,8 +163,10 @@ const Portfolio = () => {
           </button>
           <button
             onClick={() => setFilter("event")}
-            class={`cursor-pointer bg-black relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-[#F5F5F5] hover:text-[#FB923C] h-9 rounded-md px-3 ${
-              filter === "event" ? "bg-[#F5F5F5] text-[#FB923C]" : ""
+            class={`cursor-pointer relative inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3 ${
+              filter === "event"
+                ? "bg-[#F5F5F5] text-[#FB923C]"
+                : "bg-black hover:bg-[#F5F5F5] hover:text-[#FB923C]"
             }`}
           >
             <svg
@@ -144,7 +187,7 @@ const Portfolio = () => {
           </button>
         </div>
         {/* PROJECT CARDS */}
-        <div className="mt-10 px-10 flex justify-center items-center min-h-[250px]">
+        <div className="relative mt-10 px-10 flex-col justify-center items-center min-h-[250px]">
           <AnimatePresence mode="wait">
             <motion.div
               key={filteredProjects[currentIndex]?.id}
@@ -163,19 +206,63 @@ const Portfolio = () => {
                 transition: "all 0.3s",
               }}
             >
-              <img
-                src={filteredProjects[currentIndex]?.image}
-                alt={`project-${filteredProjects[currentIndex]?.id}`}
-                className="card2"
-                style={{
-                  height: "600px",
-                  width: "100%",
-                  borderRadius: "10px",
-                  display: "block",
-                }}
-              />
+              {filteredProjects[currentIndex]?.video ? (
+                <iframe
+                  width="100%"
+                  height="600"
+                  src={filteredProjects[currentIndex].video}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{
+                    borderRadius: "10px",
+                    display: "block",
+                  }}
+                ></iframe>
+              ) : (
+                <img
+                  src={filteredProjects[currentIndex]?.image}
+                  alt={`project-${filteredProjects[currentIndex]?.id}`}
+                  className="card2"
+                  style={{
+                    height: "600px",
+                    width: "100%",
+                    borderRadius: "10px",
+                    display: "block",
+                  }}
+                />
+              )}
             </motion.div>
           </AnimatePresence>
+          {/* Arrow Kiri */}
+          <button
+            onClick={prevSlide}
+            className="absolute top-1/2 left-2 -translate-y-1/2 bg-black text-white px-3 py-2 rounded-full hover:bg-gray-800 transition z-10"
+          >
+            ◀
+          </button>
+
+          {/* Arrow Kanan */}
+          <button
+            onClick={nextSlide}
+            className="absolute top-1/2 right-2 -translate-y-1/2 bg-black text-white px-3 py-2 rounded-full hover:bg-gray-800 transition z-10"
+          >
+            ▶
+          </button>
+          <div className="flex justify-center mt-4 gap-2">
+            {filteredProjects.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`w-3 h-3 rounded-full transition ${
+                  idx === currentIndex
+                    ? "bg-[#F2BE5C] scale-110"
+                    : "bg-gray-400 hover:bg-[#F2BE5C]"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
