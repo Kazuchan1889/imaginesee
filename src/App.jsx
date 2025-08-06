@@ -1,10 +1,9 @@
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
-import FeatureSection from "./components/FeatureSection";
+import Service from "./components/service";
 import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
-import Pricing from "./components/Pricing";
-import Testimonials from "./components/Testimonials";
+import Blog from "./components/blog";
 import Aboutus from "./components/Aboutus";
 import Count from "./components/count";
 
@@ -16,10 +15,9 @@ const App = () => {
         <HeroSection />
         <Aboutus />
          <Count />
-        <FeatureSection />
+        <Service />
         <Portfolio />
-        <Pricing />
-        <Testimonials />
+        <Blog />
         <Footer />
       </div>
     </>
