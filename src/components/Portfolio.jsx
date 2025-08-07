@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import project1 from "../assets/hbm.png";
+import project1 from "../assets/hbm.jpg";
 import project2 from "../assets/social1.png";
 import project5 from "../assets/arqa.png";
 import project6 from "../assets/social2.png";
@@ -8,7 +8,7 @@ import project7 from "../assets/social3.png";
 import project8 from "../assets/kingsvault.png";
 import project9 from "../assets/vikings.png";
 import project10 from "../assets/bahasa+.png";
-import project11 from "../assets/social4.png"
+import project11 from "../assets/social4.png";
 
 const projects = [
   { id: 1, image: project1, category: "website", link: "https://hbm.co.id/" },
