@@ -1,16 +1,37 @@
+import { motion } from "framer-motion";
 import logo from "../assets/logo putih.png";
 
 const Aboutus = () => {
   return (
-    <div className="relative mt-20 border-b border-neutral-800 min-h-[500px] px-16">
-      <div className="text-center">
+    <div
+      id="about"
+      className="relative mt-20 border-b border-neutral-800 min-h-[500px] px-16"
+    >
+      <div className="text-center mb-8">
         <span className="bg-neutral-900 text-orange-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
           About Us
         </span>
       </div>
-      <div className="flex lg:flex-row flex-col items-center ">
-        <img src={logo} alt="logo" className="w-[35%]" />
-        <div className="flex flex-col items-center mt-6 ">
+      <div className="flex lg:flex-row flex-col items-center gap-12">
+        {/* Logo with animation from left */}
+        <motion.img
+          src={logo}
+          alt="logo"
+          className="w-[35%]"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+        />
+
+        {/* Text section with animation from right */}
+        <motion.div
+          className="flex flex-col items-center mt-6 text-center lg:text-left"
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <h1 className="text-xl sm:text-2xl lg:text-2xl">
             Looking for an all-in-one marketing team?{" "}
             <span className="bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text">
@@ -25,7 +46,7 @@ const Aboutus = () => {
             helping businesses grow with today’s tech—all through a 360°
             marketing approach.
           </p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

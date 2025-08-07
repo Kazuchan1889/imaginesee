@@ -34,7 +34,7 @@ const Navbar = () => {
           {/* Contact Button (Desktop) */}
           <div className="hidden lg:flex justify-center space-x-12 items-center">
             <a
-              href="#"
+              href="#contact"
               className="bg-gradient-to-r from-[#58A0C8] to-[#34699A] py-2 px-3 rounded-md"
             >
               Contact Us
@@ -61,10 +61,10 @@ const Navbar = () => {
             </ul>
             <div className="flex space-x-6">
               <a
-                href="#"
+                href="#Contact"
                 className="py-2 px-3 rounded-md bg-gradient-to-r from-[#58A0C8] to-[#34699A]"
               >
-                Contact Us
+                contact Us
               </a>
             </div>
           </div>

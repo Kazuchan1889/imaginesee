@@ -34,7 +34,7 @@ const cardData = [
 
 const Pricing = () => {
   return (
-    <div className="mt-18">
+    <div id="blog" className="mt-18">
       <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center my-12 tracking-wide">
         Blog
       </h2>

@@ -48,7 +48,7 @@ const StatsSection = () => {
   }, [isInView]);
 
   return (
-    <div ref={sectionRef} className=" text-white py-20 px-4">
+    <div id="count" ref={sectionRef} className=" text-white py-20 px-4">
       {/* Title */}
       <div className="text-center mb-16">
         <h2 className="text-3xl sm:text-5xl font-bold text-yellow-500 tracking-wide">

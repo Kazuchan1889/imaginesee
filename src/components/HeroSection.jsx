@@ -1,6 +1,15 @@
+import { motion } from "framer-motion";
+
 const HeroSection = () => {
   return (
-    <div className="flex min-h-[70vh] flex-col items-center mt-6 lg:mt-20">
+    <motion.div
+      id="hero"
+      className="flex min-h-[70vh] flex-col items-center mt-6 lg:mt-20"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}
+    >
       <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide">
         Welcome to
         <span className="bg-gradient-to-r from-[#58A0C8] to-[#34699A] text-transparent bg-clip-text">
@@ -20,7 +29,7 @@ const HeroSection = () => {
           Discover More
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

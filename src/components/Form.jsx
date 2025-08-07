@@ -73,12 +73,13 @@ const Contact = () => {
                 <div
                     className={`fixed top-6 left-1/2 transform -translate-x-1/2 z-50 px-6 py-4 rounded-md shadow-lg text-white text-center max-w-md w-full transition-all duration-300 ${notification.type === "success" ? "bg-green-600" : "bg-red-600"
                         }`}
+                        
                 >
                     {notification.message}
                 </div>
             )}
 
-            <div className="max-w-6xl mx-auto">
+            <div id="contact" className="max-w-6xl mx-auto">
                 <h2 className="text-4xl sm:text-5xl font-bold text-center mb-10 tracking-wide">
                     Get In
                     <span className="bg-gradient-to-r from-[#58A0C8] to-[#34699A] text-transparent bg-clip-text">
