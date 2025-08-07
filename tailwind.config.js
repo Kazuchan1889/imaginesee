@@ -27,6 +27,10 @@ export default {
           from: { transform: "translateX(-100%)" },
           to: { transform: "translateX(0)" },
         },
+        move: {
+          "0%, 100%": { left: "0" },
+          "50%": { left: "calc(100% - 3rem)" },
+        },
       },
       animation: {
         "fade-in-up": "fade-in-up 1s ease-out forwards",
@@ -34,6 +38,7 @@ export default {
         "infinite-scroll": "infinite-scroll 25s linear infinite",
         "infinite-scroll-reverse":
           "infinite-scroll-reverse 25s linear infinite",
+           move: "move 2s ease-in-out infinite",
       },
     },
   },
