@@ -1,7 +1,10 @@
 import { useEffect, useState, useRef } from "react";
-import testImage from "../assets/test.jpg";
-import testImage2 from "../assets/testimage2.jpeg";
-import testImage3 from "../assets/testimage3.jpg";
+import Videocompanyprofile from "../assets/service/Video company profile.jpg";
+import brandinggraphicdesign from "../assets/service/branding graphic design.jpg";
+import eventdocs from "../assets/service/event docs.jpg";
+import webdev from "../assets/service/web dev.jpg";
+import marketing from "../assets/service/360 marketing.jpg";
+import sosmed from "../assets/service/sosmed.jpg";
 
 const cardData = [
   {
@@ -9,48 +12,48 @@ const cardData = [
     backTitle: "Visual Identity",
     backDesc:
       "We craft stunning brand identities and eye-catching designs to represent your business professionally.",
-    frontImage: testImage,
-    backImages: [testImage2, testImage3],
+    frontImage: brandinggraphicdesign,
+    backImages: [brandinggraphicdesign],
   },
   {
     frontTitle: "Event Documentation",
     backTitle: "Capture Every Moment",
     backDesc:
       "From photography to video editing, we professionally document your events and tell your story visually.",
-    frontImage: testImage2,
-    backImages: [testImage3, testImage],
+    frontImage: eventdocs,
+    backImages: [eventdocs],
   },
   {
     frontTitle: "Social Media Management",
     backTitle: "Build Online Presence",
     backDesc:
       "We help you plan, create, and manage content to grow your audience and engagement effectively.",
-    frontImage: testImage3,
-    backImages: [testImage, testImage2],
+    frontImage: sosmed,
+    backImages: [sosmed],
   },
   {
     frontTitle: "Company Profile",
     backTitle: "Professional Storytelling",
     backDesc:
       "Showcase your company’s values, achievements, and services through compelling visuals and content.",
-    frontImage: testImage,
-    backImages: [testImage2, testImage3],
+    frontImage: Videocompanyprofile,
+    backImages: [Videocompanyprofile],
   },
   {
     frontTitle: "360° Marketing",
     backTitle: "All-Around Strategy",
     backDesc:
       "Integrated marketing services to amplify your brand across all platforms and maximize results.",
-    frontImage: testImage2,
-    backImages: [testImage3, testImage],
+    frontImage: marketing,
+    backImages: [marketing],
   },
   {
     frontTitle: "Website Development",
     backTitle: "Digital Experience",
     backDesc:
       "We design and build modern, responsive, and user-focused websites tailored to your business goals.",
-    frontImage: testImage3,
-    backImages: [testImage, testImage2],
+    frontImage: webdev,
+    backImages: [webdev],
   },
 ];
 

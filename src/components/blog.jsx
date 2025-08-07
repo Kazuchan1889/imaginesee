@@ -3,7 +3,7 @@ import testImage3 from "../assets/testimage3.jpg";
 
 const cardData = [
   {
-    frontTitle: "Branding & Graphic Design",
+    frontTitle: "5 Alasan Brand Kamu Wajib Pakai Digital Agency Sekarang Juga",
     backTitle: "Visual Identity",
     backDesc:
       "We craft stunning brand identities and eye-catching designs to represent your business professionally.",
