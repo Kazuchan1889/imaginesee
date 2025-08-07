@@ -7,6 +7,7 @@ import Blog from "./components/blog";
 import Aboutus from "./components/Aboutus";
 import Count from "./components/count";
 import Client from "./components/Client";
+import Form from "./components/Form";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Portfolio />
         <Blog />
         <Client />
+        <Form />
         <Footer />
       </div>
     </>
