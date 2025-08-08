@@ -4,28 +4,28 @@ import testImage3 from "../assets/testimage3.jpg";
 const cardData = [
   {
     frontTitle: "5 Alasan Brand Kamu Wajib Pakai Digital Agency Sekarang Juga",
-    backTitle: "Visual Identity",
+    // backTitle: "Visual Identity",
     backDesc:
       "We craft stunning brand identities and eye-catching designs to represent your business professionally.",
     frontImage: testImage3,
   },
   {
-    frontTitle: "Event Documentation",
-    backTitle: "Capture the Moments",
+    frontTitle: "Gimana Konten Digital Bikin Brand Kamu Dilirik Ribuan Pelanggan",
+    // backTitle: "Capture the Moments",
     backDesc:
       "We provide professional photography and videography to document your important events.",
     frontImage: testImage3,
   },
   {
-    frontTitle: "Social Media Management",
-    backTitle: "Grow Your Audience",
+    frontTitle: "Rahasia SEO dan UX: Biar Website Brand Kamu Makin Nempel di Hati",
+    // backTitle: "Grow Your Audience",
     backDesc:
       "Let us handle your content, scheduling, and engagement to increase your social media presence.",
     frontImage: testImage3,
   },
   {
-    frontTitle: "Website Development",
-    backTitle: "Build Online Presence",
+    frontTitle: "Strategi Social Media yang Bikin Brand Kamu Auto Viral",
+    // backTitle: "Build Online Presence",
     backDesc:
       "We develop responsive, fast, and SEO-friendly websites tailored to your business needs.",
     frontImage: testImage3,
