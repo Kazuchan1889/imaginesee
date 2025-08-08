@@ -26,7 +26,7 @@ const Aboutus = () => {
       className="relative mt-20 border-b border-neutral-800 min-h-[500px] px-16"
     >
       <div className="text-center mb-8">
-        <span className="bg-neutral-900 text-orange-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
+        <span className="bg-neutral-900 text-[#F2BE5C] rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
           About Us
         </span>
       </div>
@@ -53,7 +53,7 @@ const Aboutus = () => {
           <h1 className="text-xl sm:text-2xl lg:text-2xl flex flex-wrap justify-center lg:justify-start">
             Looking for an all in one marketing team?{" "}
             <motion.span
-              className="bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text flex flex-wrap"
+              className="text-2xl sm:text-3xl lg:text-3xl bg-gradient-to-r from-[#2e6bb1] to-[#F2BE5C] text-transparent bg-clip-text flex flex-wrap"
               variants={containerVariant}
               initial="hidden"
               whileInView="visible"

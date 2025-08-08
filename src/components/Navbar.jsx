@@ -19,7 +19,10 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <ul className="hidden lg:flex  space-x-12 items-center">
             {navItems.map((item, index) => (
-              <li key={index} className="relative group flex items-center justify-center">
+              <li
+                key={index}
+                className="relative group flex items-center justify-center"
+              >
                 <a
                   href={item.href}
                   className="uppercase text-[16px] text-[#e1e1e1] transition-colors duration-400 ease-[cubic-bezier(0.25,0.8,0.25,1)] group-hover:text-white focus:text-white block text-center"
@@ -33,12 +36,10 @@ const Navbar = () => {
 
           {/* Contact Button (Desktop) */}
           <div className="hidden lg:flex justify-center space-x-12 items-center">
-            <a
-              href="#contact"
-              className="bg-gradient-to-r from-[#58A0C8] to-[#34699A] py-2 px-3 rounded-md"
-            >
+            <button className="bg-blue-950 text-blue-400 border border-blue-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
+              <span className="bg-blue-400 shadow-blue-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]" />
               Contact Us
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
