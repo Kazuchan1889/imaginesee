@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef } from "react";
-import Videocompanyprofile from "../assets/service/Video company profile.jpg";
-import brandinggraphicdesign from "../assets/service/branding graphic design.jpg";
-import eventdocs from "../assets/service/event docs.jpg";
-import webdev from "../assets/service/web dev.jpg";
-import marketing from "../assets/service/360 marketing.jpg";
+import Videocompanyprofile from "../assets/service/Videocompanyprofile.jpg";
+import brandinggraphicdesign from "../assets/service/brandinggraphicdesign.jpg";
+import eventdocs from "../assets/service/eventdocs.jpg";
+import webdev from "../assets/service/webdev.jpg";
+import marketing from "../assets/service/360marketing.jpg";
 import sosmed from "../assets/service/sosmed.jpg";
 
 const cardData = [
@@ -11,15 +11,15 @@ const cardData = [
     frontTitle: "Branding & Graphic Design",
     backTitle: "Visual Identity",
     backDesc:
-      "We craft stunning brand identities and eye-catching designs to represent your business professionally.",
+      "Get a logo and brochure that capture your brand’s essence.",
     frontImage: brandinggraphicdesign,
-    backImages: [brandinggraphicdesign,eventdocs],
+    backImages: [brandinggraphicdesign,brandinggraphicdesign],
   },
   {
     frontTitle: "Event Documentation",
     backTitle: "Capture Every Moment",
     backDesc:
-      "From photography to video editing, we professionally document your events and tell your story visually.",
+      "Capture moments or create videos with professional quality.",
     frontImage: eventdocs,
     backImages: [eventdocs,eventdocs],
   },
@@ -27,33 +27,33 @@ const cardData = [
     frontTitle: "Social Media Management",
     backTitle: "Build Online Presence",
     backDesc:
-      "We help you plan, create, and manage content to grow your audience and engagement effectively.",
+      "Keep your feeds active with consistent, engaging content.",
     frontImage: sosmed,
-    backImages: [sosmed,eventdocs],
+    backImages: [sosmed,sosmed],
   },
   {
     frontTitle: "Company Profile",
     backTitle: "Professional Storytelling",
     backDesc:
-      "Showcase your company’s values, achievements, and services through compelling visuals and content.",
+      "Showcase your business with a compelling profile video.",
     frontImage: Videocompanyprofile,
-    backImages: [Videocompanyprofile,eventdocs],
+    backImages: [Videocompanyprofile,Videocompanyprofile],
   },
   {
     frontTitle: "360° Marketing",
     backTitle: "All-Around Strategy",
     backDesc:
-      "Integrated marketing services to amplify your brand across all platforms and maximize results.",
+      "Reach your audience through integrated online and offline campaigns.",
     frontImage: marketing,
-    backImages: [marketing,eventdocs],
+    backImages: [marketing,marketing],
   },
   {
     frontTitle: "Website Development",
     backTitle: "Digital Experience",
     backDesc:
-      "We design and build modern, responsive, and user-focused websites tailored to your business goals.",
+      "Launch a fast, responsive site that converts visitors into customers.",
     frontImage: webdev,
-    backImages: [webdev,eventdocs],
+    backImages: [webdev,webdev],
   },
 ];
 
