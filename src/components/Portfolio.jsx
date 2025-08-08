@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import project1 from "../assets/hbm.jpg";
 import project2 from "../assets/social1.png";
 import project5 from "../assets/arqa.png";
-import project6 from "../assets/social2.png";
 import project7 from "../assets/social3.png";
 import project8 from "../assets/kingsvault.png";
 import project9 from "../assets/vikings.png";
@@ -30,7 +29,6 @@ const projects = [
     category: "website",
     link: "https://arqa.hbm.co.id/",
   },
-  { id: 6, image: project6, category: "social" },
   { id: 7, image: project7, category: "social" },
   {
     id: 8,
@@ -89,6 +87,10 @@ const Portfolio = () => {
 
     return () => clearInterval(interval);
   }, [filteredProjects, currentIndex]);
+
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [filter]);
 
   const prevSlide = () => {
     setCurrentIndex((prev) =>
@@ -239,19 +241,24 @@ const Portfolio = () => {
               }}
             >
               {filteredProjects[currentIndex]?.video ? (
-                <iframe
-                  width="100%"
-                  height="600"
-                  src={filteredProjects[currentIndex].video}
-                  title="Video"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  style={{
-                    borderRadius: "10px",
-                    display: "block",
-                  }}
-                ></iframe>
+                <div style={{ width: "100%", height: "100%" }}>
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={filteredProjects[currentIndex].video}
+                    title={`project-${
+                      filteredProjects[currentIndex]?.id || "video"
+                    }`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    style={{
+                      borderRadius: "10px",
+                      display: "block",
+                      backgroundColor: "#000",
+                    }}
+                  ></iframe>
+                </div>
               ) : (
                 <>
                   {filteredProjects[currentIndex]?.category === "website" &&

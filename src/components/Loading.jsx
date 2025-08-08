@@ -1,13 +1,16 @@
 // Loader.jsx
 import React from "react";
 import styled from "styled-components";
+import logo from "../assets/emblem.png";
 
 const Loader = () => {
   return (
     <StyledWrapper>
       <div className="textWrapper">
-        <p className="text">Loading...</p>
-        <div className="invertbox" />
+        <p className="text">
+          Imagine<span className="highlight">See.</span>
+        </p>
+        <img src={logo} alt="emblem" className="emblem" />
       </div>
     </StyledWrapper>
   );
@@ -20,29 +23,31 @@ const StyledWrapper = styled.div`
     width: fit-content;
     font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 0.25ch;
+    letter-spacing: 0.2ch;
     position: relative;
     z-index: 0;
     color: white;
     margin: 100px auto;
   }
 
-  .invertbox {
+  .highlight {
+    color: #f2ba5a; /* warna See */
+  }
+
+  .emblem {
     position: absolute;
     height: 100%;
     aspect-ratio: 1 / 1;
     left: 0;
     top: 0;
-    border-radius: 20%;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: invert(100%);
     animation: move 2s ease-in-out infinite;
-    z-index: 1;
+    z-index: 2;
+    border-radius: 20%;
   }
 
   .text {
     position: relative;
-    z-index: 2;
+    z-index: 1;
   }
 
   @keyframes move {
