@@ -10,34 +10,30 @@ const cardData = [
   {
     frontTitle: "Branding & Graphic Design",
     backTitle: "Visual Identity",
-    backDesc:
-      "Get a logo and brochure that capture your brand’s essence.",
+    backDesc: "Get a logo and brochure that capture your brand’s essence.",
     frontImage: brandinggraphicdesign,
-    backImages: [brandinggraphicdesign,brandinggraphicdesign],
+    backImages: [brandinggraphicdesign, brandinggraphicdesign],
   },
   {
     frontTitle: "Event Documentation",
     backTitle: "Capture Every Moment",
-    backDesc:
-      "Capture moments or create videos with professional quality.",
+    backDesc: "Capture moments or create videos with professional quality.",
     frontImage: eventdocs,
-    backImages: [eventdocs,eventdocs],
+    backImages: [eventdocs, eventdocs],
   },
   {
     frontTitle: "Social Media Management",
     backTitle: "Build Online Presence",
-    backDesc:
-      "Keep your feeds active with consistent, engaging content.",
+    backDesc: "Keep your feeds active with consistent, engaging content.",
     frontImage: sosmed,
-    backImages: [sosmed,sosmed],
+    backImages: [sosmed, sosmed],
   },
   {
     frontTitle: "Company Profile",
     backTitle: "Professional Storytelling",
-    backDesc:
-      "Showcase your business with a compelling profile video.",
+    backDesc: "Showcase your business with a compelling profile video.",
     frontImage: Videocompanyprofile,
-    backImages: [Videocompanyprofile,Videocompanyprofile],
+    backImages: [Videocompanyprofile, Videocompanyprofile],
   },
   {
     frontTitle: "360° Marketing",
@@ -45,7 +41,7 @@ const cardData = [
     backDesc:
       "Reach your audience through integrated online and offline campaigns.",
     frontImage: marketing,
-    backImages: [marketing,marketing],
+    backImages: [marketing, marketing],
   },
   {
     frontTitle: "Website Development",
@@ -53,7 +49,7 @@ const cardData = [
     backDesc:
       "Launch a fast, responsive site that converts visitors into customers.",
     frontImage: webdev,
-    backImages: [webdev,webdev],
+    backImages: [webdev, webdev],
   },
 ];
 
@@ -92,22 +88,31 @@ const FeatureSection = () => {
       });
     };
 
-    const titleObserver = new IntersectionObserver(animateTitle, observerOptions);
-    const cardObserver = new IntersectionObserver(animateOnScroll, observerOptions);
+    const titleObserver = new IntersectionObserver(
+      animateTitle,
+      observerOptions
+    );
+    const cardObserver = new IntersectionObserver(
+      animateOnScroll,
+      observerOptions
+    );
 
     if (titleRef.current) titleObserver.observe(titleRef.current);
     if (cardsRef.current) cardObserver.observe(cardsRef.current);
   }, []);
 
   return (
-    <div id="service" className="relative mt-20 border-b border-neutral-800 min-h-[800px]">
+    <div
+      id="service"
+      className="relative mt-20 border-b border-neutral-800 min-h-[800px]"
+    >
       <div className="text-center opacity-0" ref={titleRef}>
         <span className="bg-neutral-900 text-orange-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
           Our Services
         </span>
         <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-10 lg:mt-20 tracking-wide">
           We help you{" "}
-          <span className="bg-gradient-to-r from-[#58A0C8] to-[#34699A] text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-[#2e6bb1] to-[#F2BE5C] text-transparent bg-clip-text">
             grow digitally
           </span>
         </h2>
@@ -145,18 +150,22 @@ const FeatureSection = () => {
                   <img
                     src={card.backImages[0]}
                     alt="Back1"
-                    className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${showFirstImage ? "opacity-100" : "opacity-0"
-                      }`}
+                    className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                      showFirstImage ? "opacity-100" : "opacity-0"
+                    }`}
                   />
                   <img
                     src={card.backImages[1]}
                     alt="Back2"
-                    className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${showFirstImage ? "opacity-0" : "opacity-100"
-                      }`}
+                    className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                      showFirstImage ? "opacity-0" : "opacity-100"
+                    }`}
                   />
                 </div>
                 <div className="flex flex-col justify-center h-full px-4 text-left bg-gradient-to-br from-[#58A0C8] to-[#34699A]">
-                  <p className="text-[1.1rem] font-bold mb-1">{card.backTitle}</p>
+                  <p className="text-[1.1rem] font-bold mb-1">
+                    {card.backTitle}
+                  </p>
                   <p className="text-sm">{card.backDesc}</p>
                 </div>
               </div>

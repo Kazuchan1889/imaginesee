@@ -12,9 +12,9 @@ const HeroSection = () => {
     >
       <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide">
         Welcome to
-        <span className="bg-gradient-to-r from-[#58A0C8] to-[#34699A] text-transparent bg-clip-text">
+        <span className="bg-gradient-to-r from-[#2e6bb1] to-[#F2BE5C] text-transparent bg-clip-text">
           {" "}
-          ImagineSee
+          ImagineSee.
         </span>
       </h1>
       <p className="mt-10 text-lg text-center text-neutral-500 max-w-4xl">
