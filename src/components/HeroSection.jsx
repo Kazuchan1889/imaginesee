@@ -11,16 +11,13 @@ const HeroSection = () => {
       viewport={{ once: true, amount: 0.3 }}
     >
       <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide">
-        Welcome to
+        Lets
         <span className="bg-gradient-to-r from-[#2e6bb1] to-[#F2BE5C] text-transparent bg-clip-text">
           {" "}
-          ImagineSee.
+          Imagine{" "}
         </span>
+        Bigger & Better Together
       </h1>
-      <p className="mt-10 text-lg text-center text-neutral-500 max-w-4xl">
-        Digitally transforming your vision into impactful, design-driven
-        solutions that empower your brand to connect and inspire.
-      </p>
       <div className="flex justify-center my-10">
         <a
           href="#"
