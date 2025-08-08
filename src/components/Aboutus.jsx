@@ -26,7 +26,7 @@ const Aboutus = () => {
       className="relative mt-20 border-b border-neutral-800 min-h-[500px] px-16"
     >
       <div className="text-center mb-8">
-        <span className="bg-neutral-900 text-[#F2BE5C] rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
+        <span className="bg-neutral-900 text-orange-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
           About Us
         </span>
       </div>
@@ -51,9 +51,9 @@ const Aboutus = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           <h1 className="text-xl sm:text-2xl lg:text-2xl flex flex-wrap justify-center lg:justify-start">
-            Looking for an all-in-one marketing team?{" "}
+            Looking for an all in one marketing team?{" "}
             <motion.span
-              className="bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text ml-2 flex flex-wrap"
+              className="bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text flex flex-wrap"
               variants={containerVariant}
               initial="hidden"
               whileInView="visible"
@@ -76,7 +76,7 @@ const Aboutus = () => {
             experts in branding, marketing, design, and website development.
             With 3+ years of experience, we’ve worked with clients across
             various industries and regions. Our passion? Making an impact and
-            helping businesses grow with today’s tech—all through a 360°
+            helping businesses grow with today’s tech all through a 360°
             marketing approach.
           </p>
         </motion.div>
