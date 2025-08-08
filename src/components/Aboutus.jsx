@@ -1,7 +1,25 @@
 import { motion } from "framer-motion";
 import logo from "../assets/logo putih.png";
 
+const headingText = "We're Here For You!";
+
+const containerVariant = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+};
+
+const letterVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const Aboutus = () => {
+  const letters = headingText.split("");
+
   return (
     <div
       id="about"
@@ -32,12 +50,27 @@ const Aboutus = () => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h1 className="text-xl sm:text-2xl lg:text-2xl">
+          <h1 className="text-xl sm:text-2xl lg:text-2xl flex flex-wrap justify-center lg:justify-start">
             Looking for an all-in-one marketing team?{" "}
-            <span className="bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text">
-              We're Here For You!
-            </span>
+            <motion.span
+              className="bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text ml-2 flex flex-wrap"
+              variants={containerVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+            >
+              {letters.map((letter, index) => (
+                <motion.span
+                  key={index}
+                  className="inline-block"
+                  variants={letterVariant}
+                >
+                  {letter === " " ? "\u00A0" : letter}
+                </motion.span>
+              ))}
+            </motion.span>
           </h1>
+
           <p className="mt-10 text-lg text-neutral-500 max-w-4xl">
             ImagineSee is a creative and digital agency based in Jakarta. We are
             experts in branding, marketing, design, and website development.
