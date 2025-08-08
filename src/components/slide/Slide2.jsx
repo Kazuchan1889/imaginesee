@@ -10,6 +10,7 @@ import lifetech from "../../assets/lifetech.png";
 import btn from "../../assets/btn.png";
 import plei from "../../assets/plei.png";
 import yamaha from "../../assets/yamaha.png";
+import surya from "../../assets/surya.png";
 
 const Slide2 = () => {
   const logosRef = useRef(null);
@@ -24,6 +25,7 @@ const Slide2 = () => {
     kaixin,
     jateng,
     hbm,
+    surya,
   ];
 
   useEffect(() => {

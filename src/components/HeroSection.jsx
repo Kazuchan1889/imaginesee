@@ -11,12 +11,10 @@ const HeroSection = () => {
       viewport={{ once: true, amount: 0.3 }}
     >
       <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide">
-        Lets
         <span className="bg-gradient-to-r from-[#2e6bb1] to-[#F2BE5C] text-transparent bg-clip-text">
-          {" "}
-          Imagine{" "}
+          Lets Imagine{" "}
         </span>
-        Bigger & Better Together
+        Bigger & Better
       </h1>
       <div className="flex justify-center my-10">
         <a

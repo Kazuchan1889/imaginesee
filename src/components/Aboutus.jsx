@@ -26,7 +26,7 @@ const Aboutus = () => {
       className="relative mt-20 border-b border-neutral-800 min-h-[500px] px-16"
     >
       <div className="text-center mb-8">
-        <span className="bg-neutral-900 text-orange-500 rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
+        <span className="bg-neutral-900 text-[#F2BE5C] rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
           About Us
         </span>
       </div>

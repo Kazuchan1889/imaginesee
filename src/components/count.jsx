@@ -51,7 +51,7 @@ const StatsSection = () => {
     <div id="count" ref={sectionRef} className=" text-white py-20 px-4">
       {/* Title */}
       <div className="text-center mb-16">
-        <h2 className="text-3xl sm:text-5xl font-bold text-yellow-500 tracking-wide">
+        <h2 className="text-3xl sm:text-5xl font-bold bg-gradient-to-r from-[#2e6bb1] to-[#F2BE5C] text-transparent bg-clip-text tracking-wide">
           WE ARE IN NUMBER
         </h2>
       </div>
