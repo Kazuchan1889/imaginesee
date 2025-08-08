@@ -13,7 +13,7 @@ const cardData = [
     backDesc:
       "We craft stunning brand identities and eye-catching designs to represent your business professionally.",
     frontImage: brandinggraphicdesign,
-    backImages: [brandinggraphicdesign],
+    backImages: [brandinggraphicdesign,eventdocs],
   },
   {
     frontTitle: "Event Documentation",
@@ -21,7 +21,7 @@ const cardData = [
     backDesc:
       "From photography to video editing, we professionally document your events and tell your story visually.",
     frontImage: eventdocs,
-    backImages: [eventdocs],
+    backImages: [eventdocs,eventdocs],
   },
   {
     frontTitle: "Social Media Management",
@@ -29,7 +29,7 @@ const cardData = [
     backDesc:
       "We help you plan, create, and manage content to grow your audience and engagement effectively.",
     frontImage: sosmed,
-    backImages: [sosmed],
+    backImages: [sosmed,eventdocs],
   },
   {
     frontTitle: "Company Profile",
@@ -37,7 +37,7 @@ const cardData = [
     backDesc:
       "Showcase your company’s values, achievements, and services through compelling visuals and content.",
     frontImage: Videocompanyprofile,
-    backImages: [Videocompanyprofile],
+    backImages: [Videocompanyprofile,eventdocs],
   },
   {
     frontTitle: "360° Marketing",
@@ -45,7 +45,7 @@ const cardData = [
     backDesc:
       "Integrated marketing services to amplify your brand across all platforms and maximize results.",
     frontImage: marketing,
-    backImages: [marketing],
+    backImages: [marketing,eventdocs],
   },
   {
     frontTitle: "Website Development",
@@ -53,7 +53,7 @@ const cardData = [
     backDesc:
       "We design and build modern, responsive, and user-focused websites tailored to your business goals.",
     frontImage: webdev,
-    backImages: [webdev],
+    backImages: [webdev,eventdocs],
   },
 ];
 
