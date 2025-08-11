@@ -17,7 +17,7 @@ const App = () => {
     // Simulasi loading selama 2 detik
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 5000);
     return () => clearTimeout(timer);
   }, []);
 

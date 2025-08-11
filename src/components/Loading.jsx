@@ -6,53 +6,108 @@ import logo from "../assets/emblem.png";
 const Loader = () => {
   return (
     <StyledWrapper>
-      <div className="textWrapper">
-        <p className="text">
-          Imagine<span className="highlight">See.</span>
-        </p>
-        <img src={logo} alt="emblem" className="emblem" />
+      <div className="card">
+        <div className="loader">
+          <p>need help with</p>
+          <div className="words">
+            <span className="word">documentation?</span>
+            <span className="word">marketing?</span>
+            <span className="word">branding?</span>
+            <span className="word">website?</span>
+            <span className="word">event?</span>
+          </div>
+        </div>
       </div>
     </StyledWrapper>
   );
 };
 
 const StyledWrapper = styled.div`
-  .textWrapper {
-    height: fit-content;
-    min-width: 3rem;
-    width: fit-content;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 0.2ch;
+  .card {
+    /* color used to softly clip top and bottom of the .words container */
+    background-color: var(--bg-color);
+    padding: 1rem 2rem;
+    border-radius: 1.25rem;
+  }
+  .loader {
+    color: rgb(124, 124, 124);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 40px;
+    padding: 10px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 8px;
+  }
+
+  .words {
+    overflow: hidden;
     position: relative;
-    z-index: 0;
-    color: white;
-    margin: 100px auto;
   }
-
-  .highlight {
-    color: #f2ba5a; /* warna See */
-  }
-
-  .emblem {
+  .words::after {
+    content: "";
     position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      var(--bg-color) 10%,
+      transparent 30%,
+      transparent 70%,
+      var(--bg-color) 90%
+    );
+    z-index: 20;
+  }
+
+  .word {
+    display: block;
     height: 100%;
-    aspect-ratio: 1 / 1;
-    left: 0;
-    top: 0;
-    animation: move 2s ease-in-out infinite;
-    z-index: 2;
-    border-radius: 20%;
+    padding-left: 6px;
+    color: #2e6bb1;
+    animation: spin_4991 4s infinite;
   }
 
-  .text {
-    position: relative;
-    z-index: 1;
-  }
+  @keyframes spin_4991 {
+    15% {
+      -webkit-transform: translateY(-102%);
+      transform: translateY(-102%);
+    }
 
-  @keyframes move {
+    25% {
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+    }
+
+    35% {
+      -webkit-transform: translateY(-202%);
+      transform: translateY(-202%);
+    }
+
     50% {
-      left: calc(100% - 3rem);
+      -webkit-transform: translateY(-200%);
+      transform: translateY(-200%);
+    }
+
+    60% {
+      -webkit-transform: translateY(-302%);
+      transform: translateY(-302%);
+    }
+
+    75% {
+      -webkit-transform: translateY(-300%);
+      transform: translateY(-300%);
+    }
+
+    85% {
+      -webkit-transform: translateY(-402%);
+      transform: translateY(-402%);
+    }
+
+    100% {
+      -webkit-transform: translateY(-400%);
+      transform: translateY(-400%);
     }
   }
 `;
