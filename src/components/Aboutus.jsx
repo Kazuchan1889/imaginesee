@@ -29,7 +29,6 @@ const Aboutus = () => {
         <span className="bg-neutral-900 text-[#F2BE5C] rounded-full text-lg font-medium px-3 py-2 uppercase">
           About Us
         </span>
-
       </div>
       <div className="flex lg:flex-row flex-col items-center gap-12">
         {/* Logo with animation from left */}
@@ -52,7 +51,8 @@ const Aboutus = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           <h1 className="text-xl sm:text-2xl lg:text-2xl flex flex-wrap justify-center lg:justify-start">
-            Looking for an all in one marketing team?{" "}
+            Looking for an all in one marketing team?
+            <br />
             <motion.span
               className="text-2xl sm:text-3xl lg:text-3xl bg-gradient-to-r from-[#2e6bb1] to-[#F2BE5C] text-transparent bg-clip-text flex flex-wrap"
               variants={containerVariant}
