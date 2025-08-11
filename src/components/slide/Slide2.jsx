@@ -4,13 +4,14 @@ import React, { useEffect, useRef } from "react";
 import hbm from "../../assets/hbm.png";
 import kaixin from "../../assets/kaixin.png";
 import jateng from "../../assets/jateng.png";
-import bnn from "../../assets/bnn.png";
+import bni from "../../assets/bni.png";
 import atapbiru from "../../assets/atapbiru.png";
 import lifetech from "../../assets/lifetech.png";
 import btn from "../../assets/btn.png";
 import plei from "../../assets/plei.png";
 import yamaha from "../../assets/yamaha.png";
 import surya from "../../assets/surya.png";
+import bahasaplus from "../../assets/bahasaplus.png";
 
 const Slide2 = () => {
   const logosRef = useRef(null);
@@ -21,11 +22,12 @@ const Slide2 = () => {
     btn,
     lifetech,
     atapbiru,
-    bnn,
+    bni,
     kaixin,
     jateng,
     hbm,
     surya,
+    bahasaplus,
   ];
 
   useEffect(() => {

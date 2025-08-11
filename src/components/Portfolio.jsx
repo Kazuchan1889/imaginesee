@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import project1 from "../assets/hbm_2.png";
-import project2 from "../assets/social1.png";
+import project2 from "../assets/social5.png";
 import project5 from "../assets/arqa.png";
 import project7 from "../assets/social3.png";
 import project8 from "../assets/kingsvault.png";
@@ -10,6 +10,7 @@ import project10 from "../assets/bahasa+.png";
 import project11 from "../assets/social4.png";
 import thumbbi from "../assets/thumb_bi.png";
 import thumblenovo from "../assets/thumb_lenovo.png";
+import project12 from "../assets/social1.png";
 
 const projects = [
   { id: 1, image: project1, category: "website", link: "https://hbm.co.id/" },
@@ -72,6 +73,11 @@ const projects = [
     id: 14,
     video: "https://www.instagram.com/reel/C316YQJP1PA/embed",
     category: "video",
+  },
+  {
+    id: 15,
+    image: project12,
+    category: "social",
   },
 ];
 

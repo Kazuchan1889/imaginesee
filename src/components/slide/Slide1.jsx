@@ -11,6 +11,7 @@ import plantculture from "../../assets/plantculture.png";
 import puriland from "../../assets/puriland.png";
 import agna from "../../assets/agna.png";
 import ajt from "../../assets/ajt.png";
+import pch from "../../assets/pch.png";
 
 const Slide1 = () => {
   const logosRef = useRef(null);
@@ -26,6 +27,7 @@ const Slide1 = () => {
     puriland,
     agna,
     ajt,
+    pch,
   ];
 
   useEffect(() => {
