@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import project1 from "../assets/hbm.jpg";
+import project1 from "../assets/hbm_2.png";
 import project2 from "../assets/social1.png";
 import project5 from "../assets/arqa.png";
 import project7 from "../assets/social3.png";
@@ -8,6 +8,8 @@ import project8 from "../assets/kingsvault.png";
 import project9 from "../assets/vikings.png";
 import project10 from "../assets/bahasa+.png";
 import project11 from "../assets/social4.png";
+import thumbbi from "../assets/thumb_bi.png";
+import thumblenovo from "../assets/thumb_lenovo.png";
 
 const projects = [
   { id: 1, image: project1, category: "website", link: "https://hbm.co.id/" },
@@ -21,6 +23,7 @@ const projects = [
     id: 4,
     video:
       "https://drive.google.com/file/d/1Vtefr46sk9KBecaP8NS2ZwO-X0fkfU7k/preview",
+    poster: thumbbi,
     category: "event",
   },
   {
@@ -39,6 +42,7 @@ const projects = [
     id: 9,
     video:
       "https://drive.google.com/file/d/1YvUnzCYhZJPK5fD9Epaopyd61SicqcoN/preview",
+    poster: thumblenovo,
     category: "event",
   },
   {
@@ -64,11 +68,17 @@ const projects = [
     image: project11,
     category: "social",
   },
+  {
+    id: 14,
+    video: "https://www.instagram.com/reel/C316YQJP1PA/embed",
+    category: "video",
+  },
 ];
 
 const Portfolio = () => {
   const [filter, setFilter] = useState("website");
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
 
   const filteredProjects =
     filter === "all"
@@ -235,29 +245,44 @@ const Portfolio = () => {
                   "linear-gradient(163deg, #0F253E 0%, #F2BE5C 100%)",
                 borderRadius: "20px",
                 width: "900px",
-                height: "600px",
+                height: "auto",
                 display: "inline-block",
                 transition: "all 0.3s",
               }}
             >
               {filteredProjects[currentIndex]?.video ? (
                 <div style={{ width: "100%", height: "100%" }}>
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src={filteredProjects[currentIndex].video}
-                    title={`project-${
-                      filteredProjects[currentIndex]?.id || "video"
-                    }`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{
-                      borderRadius: "10px",
-                      display: "block",
-                      backgroundColor: "#000",
-                    }}
-                  ></iframe>
+                  {filteredProjects[currentIndex]?.poster && !showVideo ? (
+                    <img
+                      src={filteredProjects[currentIndex].poster}
+                      alt="thumbnail"
+                      style={{
+                        borderRadius: "10px",
+                        width: "100%",
+                        height: "600px",
+                        objectFit: "cover",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => setShowVideo(true)}
+                    />
+                  ) : (
+                    <iframe
+                      width="100%"
+                      height="600px"
+                      src={filteredProjects[currentIndex].video}
+                      title={`project-${
+                        filteredProjects[currentIndex]?.id || "video"
+                      }`}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      style={{
+                        borderRadius: "10px",
+                        display: "block",
+                        backgroundColor: "#000",
+                      }}
+                    ></iframe>
+                  )}
                 </div>
               ) : (
                 <>
@@ -273,7 +298,7 @@ const Portfolio = () => {
                         alt={`project-${filteredProjects[currentIndex]?.id}`}
                         className="card2 cursor-pointer"
                         style={{
-                          height: "600px",
+                          height: "100%",
                           width: "100%",
                           borderRadius: "10px",
                           display: "block",
@@ -286,7 +311,7 @@ const Portfolio = () => {
                       alt={`project-${filteredProjects[currentIndex]?.id}`}
                       className="card2"
                       style={{
-                        height: "600px",
+                        height: "100%",
                         width: "100%",
                         borderRadius: "10px",
                         display: "block",

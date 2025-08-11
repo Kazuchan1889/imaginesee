@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef } from "react";
-import Videocompanyprofile from "../assets/service/Videocompanyprofile.jpg";
+import Videocompanyprofile from "../assets/service/companyprofile.png";
 import brandinggraphicdesign from "../assets/service/brandinggraphicdesign.jpg";
-import eventdocs from "../assets/service/eventdocs.jpg";
+import eventdocs from "../assets/service/eventdocs.png";
 import webdev from "../assets/service/webdev.jpg";
-import marketing from "../assets/service/360marketing.jpg";
+import marketing from "../assets/service/eventorganizer.png";
 import sosmed from "../assets/service/sosmed.jpg";
 
 const cardData = [
@@ -36,10 +36,9 @@ const cardData = [
     backImages: [Videocompanyprofile, Videocompanyprofile],
   },
   {
-    frontTitle: "360° Marketing",
-    backTitle: "All-Around Strategy",
-    backDesc:
-      "Reach your audience through integrated online and offline campaigns.",
+    frontTitle: "Event Organizer",
+    backTitle: "Event Management",
+    backDesc: "Plan and execute events seamlessly with our team.",
     frontImage: marketing,
     backImages: [marketing, marketing],
   },
@@ -110,10 +109,10 @@ const FeatureSection = () => {
         <span className="bg-neutral-900 text-[#F2BE5C] rounded-full h-6 text-sm font-medium px-2 py-1 uppercase">
           Our Services
         </span>
-        <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-10 lg:mt-20 tracking-wide">
-          We help you{" "}
-          <span className="bg-gradient-to-r from-[#2e6bb1] to-[#F2BE5C] text-transparent bg-clip-text">
-            grow digitally
+        <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-10 lg:mt-10 lg:px-20 tracking-wide leading-[1.3]">
+          We can be your <br />
+          <span className="bg-gradient-to-r from-[#2e6bb1] to-[#F2BE5C] text-transparent bg-clip-text block mt-2 leading-[1.3]">
+            complete marketing team.
           </span>
         </h2>
       </div>
@@ -140,7 +139,6 @@ const FeatureSection = () => {
                   <p className="text-[1.1rem] font-bold mb-1">
                     {card.frontTitle}
                   </p>
-                  <p className="text-sm">Hover Me</p>
                 </div>
               </div>
 
