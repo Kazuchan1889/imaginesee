@@ -44,17 +44,19 @@ const Aboutus = () => {
 
         {/* Text section with animation from right */}
         <motion.div
-          className="flex flex-col items-center mt-6 text-center lg:text-left"
+          className="flex flex-col mt-6 text-center lg:text-left"
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h1 className="text-xl sm:text-2xl lg:text-2xl flex flex-wrap justify-center lg:justify-start">
-            Looking for an all in one marketing team?
-            <br />
+          <div className="flex flex-col items-center lg:items-start">
+            <h1 className="text-xl sm:text-2xl lg:text-2xl">
+              Looking for an all in one marketing team?
+            </h1>
+
             <motion.span
-              className="text-2xl sm:text-3xl lg:text-3xl bg-gradient-to-r from-[#2e6bb1] to-[#F2BE5C] text-transparent bg-clip-text flex flex-wrap"
+              className="mt-3 text-2xl sm:text-3xl lg:text-3xl bg-gradient-to-r from-[#2e6bb1] to-[#F2BE5C] text-transparent bg-clip-text"
               variants={containerVariant}
               initial="hidden"
               whileInView="visible"
@@ -70,7 +72,7 @@ const Aboutus = () => {
                 </motion.span>
               ))}
             </motion.span>
-          </h1>
+          </div>
 
           <p className="mt-10 text-lg text-neutral-500 max-w-4xl">
             ImagineSee is a creative and digital agency based in Jakarta. We are
