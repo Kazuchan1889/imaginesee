@@ -53,8 +53,8 @@ const Contact = () => {
       );
 
       setFormDetails({
-        firstName: "",
-        lastName: "",
+        fullName: "",
+        companyName: "",
         email: "",
         phone: "",
         message: "",
@@ -102,16 +102,16 @@ const Contact = () => {
           >
             <input
               type="text"
-              placeholder="First Name"
-              value={formDetails.firstName}
+              placeholder="Full Name"
+              value={formDetails.fullName}
               onChange={(e) => onFormUpdate("firstName", e.target.value)}
               required
               className="bg-neutral-800 text-white px-4 py-3 rounded-md focus:ring-2 focus:ring-orange-500"
             />
             <input
               type="text"
-              placeholder="Last Name"
-              value={formDetails.lastName}
+              placeholder="Company Name"
+              value={formDetails.companyName}
               onChange={(e) => onFormUpdate("lastName", e.target.value)}
               required
               className="bg-neutral-800 text-white px-4 py-3 rounded-md focus:ring-2 focus:ring-orange-500"
