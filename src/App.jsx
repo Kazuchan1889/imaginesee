@@ -6,7 +6,6 @@ import Portfolio from "./components/Portfolio";
 import Footer from "./components/Footer";
 import Blog from "./components/blog";
 import Aboutus from "./components/Aboutus";
-import Count from "./components/count";
 import Client from "./components/Client";
 import Form from "./components/Form";
 import LoadingText from "./components/Loading.jsx"; // <- Import loading text
@@ -33,10 +32,9 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <div className="max-w-7xl">
+      <div>
         <HeroSection />
         <Aboutus />
-        <Count />
         <Service />
         <Portfolio />
         <Blog />
