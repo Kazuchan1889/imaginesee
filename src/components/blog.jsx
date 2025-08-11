@@ -1,5 +1,9 @@
 import React from "react";
-import testImage3 from "../assets/testimage3.jpg";
+import p1 from "../assets/blog/wajibpakai.jpg";
+import p2 from "../assets/blog/viralsosmed.jpg";
+import p3 from "../assets/blog/branddilirikpelanggan.jpg";
+import p4 from "../assets/blog/seoux.jpg";
+
 
 const cardData = [
   {
@@ -7,28 +11,28 @@ const cardData = [
     // backTitle: "Visual Identity",
     backDesc:
       "5 Alasan Brand Kamu Wajib Pakai Digital Agency Sekarang Juga.",
-    frontImage: testImage3,
+    frontImage: p1,
   },
   {
     frontTitle: "Gimana Konten Digital Bikin Brand Kamu Dilirik Ribuan Pelanggan",
     // backTitle: "Capture the Moments",
     backDesc:
       "Gimana Konten Digital Bikin Brand Kamu Dilirik Ribuan Pelanggan",
-    frontImage: testImage3,
+    frontImage: p3,
   },
   {
     frontTitle: "Rahasia SEO dan UX: Biar Website Brand Kamu Makin Nempel di Hati",
     // backTitle: "Grow Your Audience",
     backDesc:
       "Rahasia SEO dan UX: Biar Website Brand Kamu Makin Nempel di Hati.",
-    frontImage: testImage3,
+    frontImage: p4,
   },
   {
     frontTitle: "Strategi Social Media yang Bikin Brand Kamu Auto Viral",
     // backTitle: "Build Online Presence",
     backDesc:
       "Strategi Social Media yang Bikin Brand Kamu Auto Viral.",
-    frontImage: testImage3,
+    frontImage: p2,
   },
 ];
 
