@@ -46,7 +46,7 @@ const App = () => {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/6281234567890" // Ganti dengan nomor WhatsApp
+        href="https://wa.me/6285959188005" // Ganti dengan nomor WhatsApp
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 bg-green-500 rounded-full p-4 shadow-lg hover:scale-110 transition-transform duration-300"
