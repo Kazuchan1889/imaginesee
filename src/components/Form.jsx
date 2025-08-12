@@ -71,9 +71,8 @@ const Contact = () => {
       {/* Notification */}
       {notification.visible && (
         <div
-          className={`fixed top-6 left-1/2 transform -translate-x-1/2 z-50 px-6 py-4 rounded-md shadow-lg text-white text-center max-w-md w-full transition-all duration-300 ${
-            notification.type === "success" ? "bg-green-600" : "bg-red-600"
-          }`}
+          className={`fixed top-6 left-1/2 transform -translate-x-1/2 z-50 px-6 py-4 rounded-md shadow-lg text-white text-center max-w-md w-full transition-all duration-300 ${notification.type === "success" ? "bg-green-600" : "bg-red-600"
+            }`}
         >
           {notification.message}
         </div>
@@ -142,10 +141,14 @@ const Contact = () => {
             ></textarea>
             <button
               type="submit"
-              className="md:col-span-2 bg-orange-600 hover:bg-orange-700 transition-all py-3 rounded-md text-lg font-medium"
+              className="relative group md:col-span-2 bg-[#1b4c85] h-16 w-full border-2 border-[#F2BE5C] text-[#D9D9D9] text-lg font-bold rounded-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:border-[#D9D9D9] hover:text-[#f0be60] flex items-center justify-center 
+  before:absolute before:w-10 before:h-10 before:content-[''] before:right-2 before:top-2 before:z-10 before:bg-indigo-500 before:rounded-full before:blur-lg before:transition-all before:duration-500 
+  after:absolute after:z-10 after:w-16 after:h-16 after:content-[''] after:bg-teal-400 after:right-6 after:top-4 after:rounded-full after:blur-lg after:transition-all after:duration-500 
+  hover:before:right-10 hover:before:-bottom-4 hover:before:blur hover:after:-right-6 hover:after:scale-110"
             >
               Send
             </button>
+
           </form>
         )}
       </div>
