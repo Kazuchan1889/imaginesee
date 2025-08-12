@@ -67,7 +67,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="connect" className="py-20 text-white px-4 relative">
+    <section id="connect" className=" text-white px-4 relative">
       {/* Notification */}
       {notification.visible && (
         <div
