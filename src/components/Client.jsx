@@ -5,7 +5,7 @@ import Slide2 from "./slide/Slide2";
 const Client = () => {
   return (
     <div id="client" className="relative font-inter antialiased">
-      <main className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+      <main className="relative flex flex-col justify-center overflow-hidden">
         <div className="w-full max-w-5xl mx-auto px-4 md:px-6 py-24">
           <div className="text-center">
             <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center  tracking-wide">
