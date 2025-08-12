@@ -8,13 +8,14 @@ import Blog from "./components/blog";
 import Aboutus from "./components/Aboutus";
 import Client from "./components/Client";
 import Form from "./components/Form";
-import LoadingText from "./components/Loading.jsx"; // <- Import loading text
+import LoadingText from "./components/Loading.jsx";
+import { FaWhatsapp } from "react-icons/fa"; // <- Import ikon WhatsApp
 
 const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulasi loading selama 2 detik
+    // Simulasi loading selama 5 detik
     const timer = setTimeout(() => {
       setLoading(false);
     }, 5000);
@@ -42,6 +43,16 @@ const App = () => {
         <Form />
         <Footer />
       </div>
+
+      {/* Floating WhatsApp Button */}
+      <a
+        href="https://wa.me/6281234567890" // Ganti dengan nomor WhatsApp
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-green-500 rounded-full p-4 shadow-lg hover:scale-110 transition-transform duration-300"
+      >
+        <FaWhatsapp className="text-white text-3xl" />
+      </a>
     </>
   );
 };
