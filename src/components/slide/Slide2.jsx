@@ -35,8 +35,14 @@ const Slide2 = () => {
       const ul = logosRef.current;
       const cloned = ul.cloneNode(true);
       cloned.setAttribute("aria-hidden", "true");
-      cloned.classList.add("animate-infinite-scroll-reverse");
+      cloned.classList.add("animate-infinite-scroll");
       ul.parentNode.appendChild(cloned);
+
+      return () => {
+        if (cloned && cloned.parentNode) {
+          cloned.parentNode.removeChild(cloned);
+        }
+      };
     }
   }, []);
 

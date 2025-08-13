@@ -37,6 +37,12 @@ const Slide1 = () => {
       cloned.setAttribute("aria-hidden", "true");
       cloned.classList.add("animate-infinite-scroll");
       ul.parentNode.appendChild(cloned);
+
+      return () => {
+        if (cloned && cloned.parentNode) {
+          cloned.parentNode.removeChild(cloned);
+        }
+      };
     }
   }, []);
 
