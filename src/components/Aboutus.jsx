@@ -74,7 +74,7 @@ const Aboutus = () => {
             </motion.span>
           </div>
 
-          <p className="mt-10 text-lg text-neutral-500 max-w-4xl">
+          <p className="mt-10 text-lg text-[#ededed] max-w-4xl">
             ImagineSee is a creative and digital agency based in Jakarta. We are
             experts in branding, marketing, design, and website development.
             With 3+ years of experience, we’ve worked with clients across

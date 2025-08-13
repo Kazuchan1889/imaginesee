@@ -35,10 +35,10 @@ export default {
       animation: {
         "fade-in-up": "fade-in-up 1s ease-out forwards",
         "fade-in-right": "fade-in-right 1s ease-out forwards",
-        "infinite-scroll": "infinite-scroll 25s linear infinite",
+        "infinite-scroll": "infinite-scroll 35s linear infinite",
         "infinite-scroll-reverse":
           "infinite-scroll-reverse 25s linear infinite",
-           move: "move 2s ease-in-out infinite",
+        move: "move 2s ease-in-out infinite",
       },
     },
   },

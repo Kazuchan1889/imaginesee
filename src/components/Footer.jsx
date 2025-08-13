@@ -36,7 +36,8 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between text-center sm:text-left space-y-6 sm:space-y-0 relative">
         {/* Left Text */}
         <p className="text-sm text-neutral-400 sm:absolute sm:left-0 sm:top-1/2 sm:-translate-y-1/2">
-          © 2025 <span className="font-semibold text-white">ImagineSee</span> – Digital Agency
+          © 2025 <span className="font-semibold text-white">ImagineSee</span> –
+          Digital Agency
         </p>
 
         {/* Center Logo */}
@@ -45,33 +46,37 @@ const Footer = () => {
         </div>
 
         {/* Right Social Icons */}
-        <div className="sm:absolute sm:right-0 sm:top-1/2 sm:-translate-y-1/2">
+        <div className="sm:absolute sm:right-5 sm:top-1/2 sm:-translate-y-1/2">
           <ul className="flex justify-center gap-2">
-            {icons.map(({ name, icon, url, hoverBg, tooltipBg, textColor }, index) => (
-              <li key={index}>
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`group relative w-[40px] h-[40px] bg-white rounded-full shadow-md flex items-center justify-center cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] ${hoverBg}`}
-                >
-                  {/* Tooltip */}
-                  <span
-                    className={`absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mb-2 px-2 py-1 text-xs text-white rounded-md opacity-0 pointer-events-none transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] group-hover:opacity-100 group-hover:-top-5 ${tooltipBg}`}
+            {icons.map(
+              ({ name, icon, url, hoverBg, tooltipBg, textColor }, index) => (
+                <li key={index}>
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group relative w-[40px] h-[40px] bg-white rounded-full shadow-md flex items-center justify-center cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] ${hoverBg}`}
                   >
-                    {name}
+                    {/* Tooltip */}
                     <span
-                      className={`absolute left-1/2 transform -translate-x-1/2 rotate-45 w-2 h-2 -bottom-1 ${tooltipBg}`}
-                    />
-                  </span>
+                      className={`absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full mb-2 px-2 py-1 text-xs text-white rounded-md opacity-0 pointer-events-none transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] group-hover:opacity-100 group-hover:-top-5 ${tooltipBg}`}
+                    >
+                      {name}
+                      <span
+                        className={`absolute left-1/2 transform -translate-x-1/2 rotate-45 w-2 h-2 -bottom-1 ${tooltipBg}`}
+                      />
+                    </span>
 
-                  {/* Icon */}
-                  <span className={`text-black text-[16px] transition duration-300 ${textColor}`}>
-                    {icon}
-                  </span>
-                </a>
-              </li>
-            ))}
+                    {/* Icon */}
+                    <span
+                      className={`text-black text-[16px] transition duration-300 ${textColor}`}
+                    >
+                      {icon}
+                    </span>
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         </div>
       </div>

@@ -16,7 +16,7 @@ const HeroSection = () => {
         backgroundPosition: "bottom",
       }}
     >
-      <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide">
+      <h1 className="font-semibold text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide">
         <span className="bg-gradient-to-r from-[#2e6bb1] to-[#F2BE5C] text-transparent bg-clip-text">
           Lets Imagine{" "}
         </span>
