@@ -21,10 +21,10 @@ export default {
         },
         "infinite-scroll": {
           from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(-50%)" },
         },
         "infinite-scroll-reverse": {
-          from: { transform: "translateX(-100%)" },
+          from: { transform: "translateX(-50%)" },
           to: { transform: "translateX(0)" },
         },
         move: {
@@ -35,7 +35,7 @@ export default {
       animation: {
         "fade-in-up": "fade-in-up 1s ease-out forwards",
         "fade-in-right": "fade-in-right 1s ease-out forwards",
-        "infinite-scroll": "infinite-scroll 35s linear infinite",
+        "infinite-scroll": "infinite-scroll 25s linear infinite",
         "infinite-scroll-reverse":
           "infinite-scroll-reverse 25s linear infinite",
         move: "move 2s ease-in-out infinite",

@@ -31,10 +31,10 @@ const Slide1 = () => {
   ];
 
   return (
-    <div className="mt-10 w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+    <div className="mt-10 w-full inline-flex flex-nowrap overflow-hidden">
       <ul
         ref={logosRef}
-        className="min-w-max flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
+        className="min-w-max flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll-reverse"
       >
         {[...logos, ...logos].map((logo, index) => (
           <li key={`logo1-${index}`}>
