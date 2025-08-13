@@ -54,6 +54,7 @@ const cardData = [
 
 const FeatureSection = () => {
   const [showFirstImage, setShowFirstImage] = useState(true);
+  const [flippedCard, setFlippedCard] = useState(null); // track kartu yang di-flip
   const titleRef = useRef();
   const cardsRef = useRef();
 
@@ -65,9 +66,7 @@ const FeatureSection = () => {
   }, []);
 
   useEffect(() => {
-    const observerOptions = {
-      threshold: 0.1,
-    };
+    const observerOptions = { threshold: 0.1 };
 
     const animateOnScroll = (entries, observer) => {
       entries.forEach((entry) => {
@@ -87,14 +86,8 @@ const FeatureSection = () => {
       });
     };
 
-    const titleObserver = new IntersectionObserver(
-      animateTitle,
-      observerOptions
-    );
-    const cardObserver = new IntersectionObserver(
-      animateOnScroll,
-      observerOptions
-    );
+    const titleObserver = new IntersectionObserver(animateTitle, observerOptions);
+    const cardObserver = new IntersectionObserver(animateOnScroll, observerOptions);
 
     if (titleRef.current) titleObserver.observe(titleRef.current);
     if (cardsRef.current) cardObserver.observe(cardsRef.current);
@@ -121,55 +114,65 @@ const FeatureSection = () => {
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 px-6 opacity-0"
         ref={cardsRef}
       >
-        {cardData.map((card, index) => (
-          <div
-            key={index}
-            className="w-full h-[254px] [perspective:1000px] font-sans group"
-          >
-            <div className="relative w-full h-full text-center transition-transform duration-[0.8s] [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-              {/* Front */}
+        {cardData.map((card, index) => {
+          const isFlipped = flippedCard === index;
+          return (
+            <div
+              key={index}
+              className="w-full h-[254px] [perspective:1000px] font-sans"
+              onClick={() => setFlippedCard(isFlipped ? null : index)} // toggle flip
+              onMouseEnter={() => setFlippedCard(index)} // desktop hover
+              onMouseLeave={() => setFlippedCard(null)}
+            >
               <div
-                className="absolute w-full h-full flex flex-col justify-center items-center border border-[#34699A] rounded-xl shadow-md text-white [backface-visibility:hidden] bg-cover bg-center overflow-hidden"
-                style={{
-                  backgroundImage: `url(${card.frontImage})`,
-                }}
+                className={`relative w-full h-full text-center transition-transform duration-[0.8s] [transform-style:preserve-3d] ${
+                  isFlipped ? "[transform:rotateY(180deg)]" : ""
+                }`}
               >
-                <span className="absolute inset-0 bg-black opacity-50 z-0" />
-                <div className="z-10 px-4">
-                  <p className="text-[1.1rem] font-bold mb-1">
-                    {card.frontTitle}
-                  </p>
+                {/* Front */}
+                <div
+                  className="absolute w-full h-full flex flex-col justify-center items-center border border-[#34699A] rounded-xl shadow-md text-white [backface-visibility:hidden] bg-cover bg-center overflow-hidden"
+                  style={{
+                    backgroundImage: `url(${card.frontImage})`,
+                  }}
+                >
+                  <span className="absolute inset-0 bg-black opacity-50 z-0" />
+                  <div className="z-10 px-4">
+                    <p className="text-[1.1rem] font-bold mb-1">
+                      {card.frontTitle}
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              {/* Back */}
-              <div className="absolute w-full h-full flex flex-col border border-[#34699A] rounded-xl shadow-md text-white [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-hidden">
-                <div className="relative h-[250px] w-full overflow-hidden">
-                  <img
-                    src={card.backImages[0]}
-                    alt="Back1"
-                    className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                      showFirstImage ? "opacity-100" : "opacity-0"
-                    }`}
-                  />
-                  <img
-                    src={card.backImages[1]}
-                    alt="Back2"
-                    className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                      showFirstImage ? "opacity-0" : "opacity-100"
-                    }`}
-                  />
-                </div>
-                <div className="flex flex-col justify-center h-full px-4 text-left bg-gradient-to-br from-[#58A0C8] to-[#34699A]">
-                  <p className="text-[1.1rem] font-bold mb-1">
-                    {card.backTitle}
-                  </p>
-                  <p className="text-sm">{card.backDesc}</p>
+                {/* Back */}
+                <div className="absolute w-full h-full flex flex-col border border-[#34699A] rounded-xl shadow-md text-white [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-hidden">
+                  <div className="relative h-[250px] w-full overflow-hidden">
+                    <img
+                      src={card.backImages[0]}
+                      alt="Back1"
+                      className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                        showFirstImage ? "opacity-100" : "opacity-0"
+                      }`}
+                    />
+                    <img
+                      src={card.backImages[1]}
+                      alt="Back2"
+                      className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                        showFirstImage ? "opacity-0" : "opacity-100"
+                      }`}
+                    />
+                  </div>
+                  <div className="flex flex-col justify-center h-full px-4 text-left bg-gradient-to-br from-[#58A0C8] to-[#34699A]">
+                    <p className="text-[1.1rem] font-bold mb-1">
+                      {card.backTitle}
+                    </p>
+                    <p className="text-sm">{card.backDesc}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
