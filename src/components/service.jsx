@@ -54,7 +54,7 @@ const cardData = [
 
 const FeatureSection = () => {
   const [showFirstImage, setShowFirstImage] = useState(true);
-  const [flippedCard, setFlippedCard] = useState(null); // track kartu yang di-flip
+  const [flippedCard, setFlippedCard] = useState(null);
   const titleRef = useRef();
   const cardsRef = useRef();
 
@@ -119,9 +119,9 @@ const FeatureSection = () => {
           return (
             <div
               key={index}
-              className="w-full h-[254px] [perspective:1000px] font-sans"
-              onClick={() => setFlippedCard(isFlipped ? null : index)} // toggle flip
-              onMouseEnter={() => setFlippedCard(index)} // desktop hover
+              className="w-full h-[254px] [perspective:1000px] font-sans cursor-pointer"
+              onClick={() => setFlippedCard(isFlipped ? null : index)}
+              onMouseEnter={() => setFlippedCard(index)}
               onMouseLeave={() => setFlippedCard(null)}
             >
               <div
@@ -131,7 +131,7 @@ const FeatureSection = () => {
               >
                 {/* Front */}
                 <div
-                  className="absolute w-full h-full flex flex-col justify-center items-center border border-[#34699A] rounded-xl shadow-md text-white [backface-visibility:hidden] bg-cover bg-center overflow-hidden"
+                  className="absolute w-full h-full flex flex-col justify-center items-center border border-[#34699A] rounded-xl shadow-md text-white bg-cover bg-center overflow-hidden [backface-visibility:hidden] [transform:rotateY(0deg)]"
                   style={{
                     backgroundImage: `url(${card.frontImage})`,
                   }}
@@ -145,7 +145,7 @@ const FeatureSection = () => {
                 </div>
 
                 {/* Back */}
-                <div className="absolute w-full h-full flex flex-col border border-[#34699A] rounded-xl shadow-md text-white [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-hidden">
+                <div className="absolute w-full h-full flex flex-col border border-[#34699A] rounded-xl shadow-md text-white overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)]">
                   <div className="relative h-[250px] w-full overflow-hidden">
                     <img
                       src={card.backImages[0]}
