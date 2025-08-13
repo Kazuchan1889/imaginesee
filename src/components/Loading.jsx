@@ -8,11 +8,10 @@ const Loader = () => {
     <StyledWrapper>
       <div className="card">
         <div className="loader">
-          <p>need help with</p>
-          <div className="words">
-            <span className="word">documentation?</span>
-            <span className="word">marketing?</span>
+          <p className="max-sm:text-lg">need help with</p>
+          <div className="words max-sm:text-lg">
             <span className="word">branding?</span>
+            <span className="word">marketing?</span>
             <span className="word">website?</span>
             <span className="word">event?</span>
           </div>
