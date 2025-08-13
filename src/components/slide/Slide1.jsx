@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 
 // Assets
 import ajip from "../../assets/ajip.png";
@@ -30,29 +30,13 @@ const Slide1 = () => {
     pch,
   ];
 
-  useEffect(() => {
-    if (logosRef.current) {
-      const ul = logosRef.current;
-      const cloned = ul.cloneNode(true);
-      cloned.setAttribute("aria-hidden", "true");
-      cloned.classList.add("animate-infinite-scroll");
-      ul.parentNode.appendChild(cloned);
-
-      return () => {
-        if (cloned && cloned.parentNode) {
-          cloned.parentNode.removeChild(cloned);
-        }
-      };
-    }
-  }, []);
-
   return (
     <div className="mt-10 w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
       <ul
         ref={logosRef}
         className="min-w-max flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
       >
-        {logos.map((logo, index) => (
+        {[...logos, ...logos].map((logo, index) => (
           <li key={`logo1-${index}`}>
             <img src={logo} alt={`client-${index}`} />
           </li>
