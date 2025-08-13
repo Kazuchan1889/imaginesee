@@ -31,7 +31,7 @@ const Slide2 = () => {
     <div className="mt-6">
       <Slider
         width="200px" // lebar tiap logo
-        duration={30} // durasi animasi penuh (semakin kecil semakin cepat)
+        duration={25} // durasi animasi penuh (semakin kecil semakin cepat)
         pauseOnHover={false}
       >
         {logos.map((logo, i) => (
