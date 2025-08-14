@@ -28,7 +28,7 @@ const Slide2 = () => {
   ];
 
   return (
-    <div className="mt-6">
+    <div className="mt-6 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
       <Slider
         width="200px" // lebar tiap logo
         duration={25} // durasi animasi penuh (semakin kecil semakin cepat)
