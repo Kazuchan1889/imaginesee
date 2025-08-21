@@ -25,7 +25,7 @@ const Navbar = () => {
               >
                 <a
                   href={item.href}
-                  className="uppercase text-[16px] text-[#e1e1e1] transition-colors duration-400 ease-[cubic-bezier(0.25,0.8,0.25,1)] group-hover:text-white focus:text-white block text-center"
+                  className="text-[16px] text-[#e1e1e1] transition-colors duration-400 ease-[cubic-bezier(0.25,0.8,0.25,1)] group-hover:text-white focus:text-white block text-center"
                 >
                   {item.label}
                   <span className="absolute inset-x-0 mx-auto -bottom-[2px] h-[2px] w-0 bg-white transition-all duration-400 ease-[cubic-bezier(0.25,0.8,0.25,1)] group-hover:w-full group-focus:w-full"></span>
